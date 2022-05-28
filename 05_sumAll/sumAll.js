@@ -1,14 +1,19 @@
 const sumAll = function(...nums) {
     //console.log(nums);
-    
 
+    if (
+           !Number.isInteger(nums[0])
+        || !Number.isInteger(nums[nums.length -1])
+        || nums[0] < 0
+        || nums[nums.length -1] < 0
+    ) {
+        return "ERROR";
+    }
     
-    let total = 0;
+     let total = 0;
     
     if (
-            Number.isInteger(nums[0])
-        && Number.isInteger(nums[nums.length -1])
-        && nums[0] >= 0
+            nums[0] >= 0
         && nums[0] < nums[nums.length -1]
     ) {
         for (let i = 0; i <= nums[nums.length - 1]; i += 1) {
@@ -16,21 +21,13 @@ const sumAll = function(...nums) {
             
             total += i;
         }
-    } else if (
-            Number.isInteger(nums[0])
-        && Number.isInteger(nums[nums.length - 1])
-        && nums[0] > 0
-    ){
+    } else {
         for (let i = nums[0]; i >= nums[nums.length - 1]; i -= 1) {
             //console.log(i);
             
             total += i;
         }
-    } else {
-        return "ERROR";
-    }
-    
-    
+    } 
     
     return total;
 };
