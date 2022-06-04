@@ -1,3 +1,18 @@
+/*
+ * CHECK ALSO THIS GREAT SOLUTION FROM THE ODIN PROJECT 
+ * OWN SOLUTION....................
+ */
+/*
+const palindromes = function(string) {
+  processedString = string.toLowerCase().replace(/[^a-z]/g, "");
+  return (
+    processedString
+      .split("")
+      .reverse()
+      .join("") == processedString
+  );
+};*/
+
 const palindromes = function (str) {
     let nonPunctatedStr = '';
     let reversedStr = '';
